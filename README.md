@@ -17,3 +17,10 @@ zmqpubrawtx=tcp://127.0.0.1:28332
 
 
 
+*Resultado del script:*
+
+Hash: "2b7c9160f0ae3c5af8b76db60e4ec1e50313a689776a392d60a3d1a7f0817bb8"
+Topic: "hashtx"
+Sequence number: 57160d00 -> "W\u{16}\r\0"
+
+

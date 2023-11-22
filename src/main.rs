@@ -8,6 +8,11 @@ use zmq::Context;
 
 use rustc_hex::ToHex;
 
+extern crate hex;
+
+
+
+
 fn mempool_subscriber() -> Result<(), Box<dyn std::error::Error>> {
     
     // Crear un contexto zmq
@@ -51,7 +56,10 @@ fn mempool_subscriber() -> Result<(), Box<dyn std::error::Error>> {
             Ok(tx_hex) => {
                 // Convert bytes to a hexadecimal string
                 let hex_string = tx_hex.to_hex::<String>();
-                println!("Received transaction: {:?}", hex_string);
+
+               
+                process_hex_string(&hex_string);
+
                 Some(hex_string)
             },
             Err(e) => {
@@ -62,10 +70,34 @@ fn mempool_subscriber() -> Result<(), Box<dyn std::error::Error>> {
         
         
         // Pausar para evitar un consumo excesivo de recursos
-        thread::sleep(Duration::from_secs(2));
+        thread::sleep(Duration::from_secs(0));
     
     }   // Fin del loop
 
+}
+
+
+fn process_hex_string(hex_string: &str) {
+    // Longitud de la cadena hexadecimal
+   let len = hex_string.len();
+
+   match len {
+       64 => {
+           println!("Hash: {:?}", hex_string);
+       },
+       12 => {
+           println!("Topic: {:?}", "hashtx");
+       },
+       8 => {
+           let bytes = hex::decode(&hex_string).expect("Error al decodificar la cadena hexadecimal");
+           let text_string = String::from_utf8_lossy(&bytes);
+           println!("Sequence number: {} -> {:?}", &hex_string , text_string);
+           println!("\n");
+       },
+       _ => {
+           println!("Unrecognized hex string length: {}", len);
+       }
+   }
 }
 
 fn main() {
