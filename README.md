@@ -5,7 +5,7 @@
 
 2. **Crear un socket de tipo SUB**: El programa crea un socket SUB utilizando el contexto ZeroMQ. Si hay un error al crear el socket, el programa imprime el error y lo devuelve.
 
-3. **Conectar al nodo Bitcoin  (puerto 28332)**: El socket SUB se conecta a un nodo de Bitcoin que se ejecuta en localhost en el puerto 28332. Si hay un error al conectar, el programa imprime el error y lo devuelve. 
+3. **Conectar al nodo Bitcoin**: El socket SUB se conecta a un nodo de Bitcoin que se ejecuta en localhost en el puerto 28332. Si hay un error al conectar, el programa imprime el error y lo devuelve. 
 En el archivo ***bitcoin.conf*** se ha de incluir el comando: 
 zmqpubrawtx=tcp://127.0.0.1:28332
 
