@@ -1,5 +1,5 @@
 
-# **Ejemplo de utilización la biblioteca ZeroMQ con hashtx **
+# Ejemplo de utilización la biblioteca ZeroMQ con hashtx 
 
 1. **Crear un contexto zmq**: El programa comienza creando un nuevo contexto ZeroMQ. Este contexto se utiliza para crear sockets ZeroMQ.
 
