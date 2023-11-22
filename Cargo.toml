@@ -1,0 +1,11 @@
+[package]
+name = "zmq_mempool"
+version = "0.1.0"
+edition = "2021"  
+
+[dependencies]
+zmq="0.10"
+rustc-hex = "2.1.0"
+
+
+
