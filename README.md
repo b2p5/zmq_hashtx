@@ -7,7 +7,7 @@
 
 3. **Conectar al nodo Bitcoin**: El socket SUB se conecta a un nodo de Bitcoin que se ejecuta en localhost en el puerto 28332. Si hay un error al conectar, el programa imprime el error y lo devuelve. 
 En el archivo ***bitcoin.conf*** se ha de incluir el comando: 
-zmqpubrawtx=tcp://127.0.0.1:28332
+zmqpubhashtx=tcp://127.0.0.1:28332
 
 4. **Suscribirse a eventos relacionados con la mempool**: El socket SUB se suscribe a los eventos "hashtx", que representan las notificionrs sobre todas las transacciones.
 

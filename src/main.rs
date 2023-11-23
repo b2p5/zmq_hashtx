@@ -5,11 +5,8 @@
 use std::thread;
 use std::time::Duration;
 use zmq::Context;
-
 use rustc_hex::ToHex;
-
 extern crate hex;
-
 
 
 
